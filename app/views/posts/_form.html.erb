@@ -1,9 +1,22 @@
+<br>
+<br>
+
 <%=form_for @post do |f|%>
-<%=f.label "name"%>
+<%=f.label "Name: "%>
+<br>
 <%=f.text_field :title%>
-<%=f.label "content hue hue content:"%>
+<br>
+<br>
+<%=f.label "Content:"%>
+<br>
 <%=f.text_area :content%>
-<%=f.collection_select :blogger_ids, Blogger.all, :id, :name%>
-<%=f.collection_select :destination_ids, Destination.all, :id, :name%>
+<br>
+<br>
+<%=f.label "blogger: "%>
+<div><%=f.collection_select :blogger_id, Blogger.all, :id, :name%></div>
+<br>
+<%=f.label "destination: "%>
+<div><%=f.collection_select :destination_id, Destination.all, :id, :name%></div>
+<br>
 <%=f.submit "smash me"%>
 <%end%>

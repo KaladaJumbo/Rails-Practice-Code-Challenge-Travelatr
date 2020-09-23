@@ -6,4 +6,7 @@
 <br>
 <%=link_to @post.destination.name, destination_path(@post.destination)%>
 <br>
+<br>
+<div>likes: <%=@post.likes%></div>
+<br>
 <%=button_to "smash me please...", like_me_path %>
