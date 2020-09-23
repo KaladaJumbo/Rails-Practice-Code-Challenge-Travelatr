@@ -1,6 +1,10 @@
 <h1><%=@blogger.name%></h1>
 <p><%=@blogger.age%></p>
 
+<b>Top 5 most talked about: </b>
+<%@blogger.top_5.each do |destination|%>
+    <p><%=Destination.find(destination).name%></p>
+<%end%>
 <div>total likes: <%=@blogger.posts.sum do |post|%>
     <%post.likes%>
 <%end%></div>
@@ -8,9 +12,11 @@
 <div><%= link_to("featured post", post_path(@blogger.featured_post))%></div>
 
 <%@blogger.posts.each do |post|%>
-    <p>title: <%=post.title%></p>
     <p>likes: <%=post.likes%></p>
-    <p>content: <%=post.title%></p>
+    <br>
+    <p>title: <%=post.title%></p>
+    <br>
+    <br>
 <%end%>
 
 

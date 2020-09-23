@@ -1,0 +1,9 @@
+<h1><%= @post.title%></h1>
+<br>
+<p><%=@post.content%></p>
+<%=link_to @post.blogger.name, blogger_path(@post.blogger)%>
+<br>
+<br>
+<%=link_to @post.destination.name, destination_path(@post.destination)%>
+<br>
+<%=button_to "smash me please...", like_me_path %>

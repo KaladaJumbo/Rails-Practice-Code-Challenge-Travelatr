@@ -1,10 +1,13 @@
 class DestinationsController < ApplicationController
-
+    before_action :define_destination, only: [:show, :edit, :update]
+    
     def index
 
     end
 
     def show
+
+        render "show"
 
     end
 
@@ -34,5 +37,10 @@ class DestinationsController < ApplicationController
         params.require(:destination).permit(*args)
     end
 
+    def define_destination
+
+        @destination = Destination.find(params[:id])
+
+    end
 
 end

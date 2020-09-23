@@ -1,0 +1,7 @@
+<%@destination.name%>
+<%@destination.posts.last(5)%>
+
+<div><%= link_to("featured post", post_path(@destination.featured_post))%></div>
+<br>
+<div>Average age of bloggers: <%=@destination.average_blogger_age%></div>
+<%%>

@@ -1,0 +1,9 @@
+<%=form_for @post do |f|%>
+<%=f.label "name"%>
+<%=f.text_field :title%>
+<%=f.label "content hue hue content:"%>
+<%=f.text_area :content%>
+<%=f.collection_select :blogger_ids, Blogger.all, :id, :name%>
+<%=f.collection_select :destination_ids, Destination.all, :id, :name%>
+<%=f.submit "smash me"%>
+<%end%>

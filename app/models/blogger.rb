@@ -13,4 +13,11 @@ class Blogger < ApplicationRecord
 
     end
 
+    def top_5
+
+        array = self.posts.map {|post| post.destination.id}
+        array.max_by(5) { |i| array.count(i) }.uniq
+
+    end
+
 end
