@@ -2,7 +2,7 @@ class DestinationsController < ApplicationController
     before_action :define_destination, only: [:show, :edit, :update]
     
     def index
-
+        @destinations = Destination.all
     end
 
     def show

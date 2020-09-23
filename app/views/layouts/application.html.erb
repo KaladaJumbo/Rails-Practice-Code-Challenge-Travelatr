@@ -9,6 +9,11 @@
   </head>
 
   <body>
+    <div class="header">
+    <%= link_to("Back to Destinations!", destinations_path) %>
+    <br>
+    <%= link_to("Homepage!", homepage_path) %>
+    </div>
     <%= yield %>
   </body>
 </html>

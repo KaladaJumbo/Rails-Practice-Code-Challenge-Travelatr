@@ -1,7 +1,18 @@
-<%@destination.name%>
-<%@destination.posts.last(5)%>
+<h1><%= @destination.name%></h1>
 
-<div><%= link_to("featured post", post_path(@destination.featured_post))%></div>
-<br>
-<div>Average age of bloggers: <%=@destination.average_blogger_age%></div>
-<%%>
+<% if !@destination.posts.empty? %>
+    Last 5 Posts About <%= @destination.name %>:<br>
+    <% @destination.posts.last(5).each do |post| %>
+        <%= link_to(post.title, post_path(post)) %><br>
+    <% end %>
+    <br>
+    <div>
+    <%= link_to("Featured Post!", post_path(@destination.featured_post))%>
+    </div>
+    <br>
+    <div>Average age of bloggers: <%=@destination.average_blogger_age%></div>
+<% else %>
+        No posts written yet!
+<% end %>
+<br><br>
+<%= link_to("Write a new post about this destination!", destination_post_path(@destination))%>

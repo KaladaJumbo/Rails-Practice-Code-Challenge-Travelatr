@@ -12,7 +12,7 @@ Destination.destroy_all
 
 30.times do 
   Destination.create({
-    name: Faker::GameOfThrones.city,
+    name: Faker::TvShows::GameOfThrones.city,
     country: Faker::Address.country
   })
 end
@@ -30,8 +30,8 @@ arr = [1,2,3,4,5,6,7,8]
 
   (2..6).to_a.sample.times do 
     Post.create({
-      title: Faker::Hipster.sentence(3),
-      content: Faker::Hipster.paragraphs(4),
+      title: Faker::Hipster.sentence(word_count: 3),
+      content: Faker::Hipster.paragraphs(number: 4),
       likes: arr.sample,
       blogger: blogger,
       destination: Destination.all.sample

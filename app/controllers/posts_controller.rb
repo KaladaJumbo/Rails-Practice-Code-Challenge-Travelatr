@@ -12,10 +12,9 @@ class PostsController < ApplicationController
     end
 
     def new
-
-        @post = Post.new
+        @dest_id = params[:id]
+        @post = Post.new(destination_id: @dest_id)
         render "new"
-
     end
 
     def create
@@ -51,6 +50,9 @@ class PostsController < ApplicationController
         @post.update(likes: @post.likes+=1)
         redirect_to post_path(@post)
 
+    end
+
+    def homepage
     end
 
     private
