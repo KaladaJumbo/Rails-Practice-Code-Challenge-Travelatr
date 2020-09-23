@@ -1,0 +1,19 @@
+<h1><%=@blogger.name%></h1>
+<p><%=@blogger.age%></p>
+
+<div>total likes: <%=@blogger.posts.sum do |post|%>
+    <%post.likes%>
+<%end%></div>
+
+<div><%= link_to("featured post", post_path(@blogger.featured_post))%></div>
+
+<%@blogger.posts.each do |post|%>
+    <p>title: <%=post.title%></p>
+    <p>likes: <%=post.likes%></p>
+    <p>content: <%=post.title%></p>
+<%end%>
+
+
+<p><%=@blogger.bio%></p>
+
+
